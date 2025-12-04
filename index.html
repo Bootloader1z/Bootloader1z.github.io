@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://drive.google.com https://lh3.googleusercontent.com; frame-src https://drive.google.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <title>Portfolio | Your Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Portfolio</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Matthew D. Laxamana</h1>
+                <p class="hero-title">DevSecOps - Cloud Engineer</p>
+                <p class="hero-description">Passionate about creating secure, efficient, and beautiful web applications.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Work</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-avatar"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a dedicated developer with a passion for building secure and performant web applications. With expertise in modern technologies and best practices, I deliver solutions that prioritize user experience and data security.</p>
+                    <p>My approach combines clean code principles with security-first development, ensuring every project meets the highest standards.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Laravel Blade</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Security</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">OWASP</span>
+                        <span class="skill-tag">Security Auditing</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>System Administration</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SysAdmin (Basic)</span>
+                        <span class="skill-tag">DBM (Basic)</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Windows Server</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div id="cert-grid" class="cert-grid">
+                <!-- Certifications loaded dynamically -->
+                <div class="loading-spinner" id="cert-loading">
+                    <div class="spinner"></div>
+                    <p>Loading certifications...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div img="https://mta.dswd.gov.ph/Images/MTAHomeLogo.png" class="project-image project-mta"></div>
+                    <div class="project-content">
+                        <h3>DSWD MTA (Minor Travel Abroad)</h3>
+                        <p>Manages and maintains the cloud-based beneficiary matching system for DSWD. Oversees data validation, deduplication, and cross-database matching processes to ensure accurate identification of social welfare beneficiaries.</p>
+                        <div class="project-tags">
+                            <span>AWS</span>
+                            <span>Cloud Migration</span>
+                            <span>Database</span>
+                        </div>
+                        <span class="project-status status-live">Live</span>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image project-helps"></div>
+                    <div class="project-content">
+                        <h3>DSWD HELPS (Harmonized Electronic License Permit System)</h3>
+                        <p>Handles the electronic profiling and household assessment platform used for national poverty targeting. Ensures the integrity, availability, and efficient processing of socioeconomic data for millions of households.</p>
+                        <div class="project-tags">
+                            <span>AWS</span>
+                            <span>Data Analytics</span>
+                            <span>Security</span>
+                        </div>
+                        <span class="project-status status-live">Live</span>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image project-isdp"></div>
+                    <div class="project-content">
+                        <h3>ISDP (Information System Digital Payment)</h3>
+                        <p>Administers the unified information system that integrates multiple social welfare programs. Supports digital payment workflows, service delivery, and case management operations across DSWD field offices.</p>
+                        <div class="project-tags">
+                            <span>AWS</span>
+                            <span>Digital Payment</span>
+                            <span>Integration</span>
+                        </div>
+                        <span class="project-status status-live">Live</span>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image project-newgrs"></div>
+                    <div class="project-content">
+                        <h3>NEWGRS (New General Records System)</h3>
+                        <p>Modern records management system for DSWD. Digitizes and manages official documents, correspondence, and administrative records.</p>
+                        <div class="project-tags">
+                            <span>AWS</span>
+                            <span>Document Management</span>
+                            <span>Workflow</span>
+                        </div>
+                        <span class="project-status status-live">Live</span>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image project-qlik"></div>
+                    <div class="project-content">
+                        <h3>Qlik Analytics Platform</h3>
+                        <p>Business intelligence and data visualization platform. Provides real-time dashboards and analytics for DSWD decision-makers.</p>
+                        <div class="project-tags">
+                            <span>Qlik Sense</span>
+                            <span>Data Visualization</span>
+                            <span>BI</span>
+                        </div>
+                        <span class="project-status status-live">Live</span>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-image project-cloud"></div>
+                    <div class="project-content">
+                        <h3>DSWD Cloud Migration Initiative</h3>
+                        <p>Supports and manages the migration of DSWD enterprise systems to AWS. Ensures improved scalability, security, disaster recovery, and cost-efficient cloud operations for mission-critical applications.</p>
+                        <div class="project-tags">
+                            <span>AWS</span>
+                            <span>Infrastructure</span>
+                            <span>DevOps</span>
+                        </div>
+                        <span class="project-status status-completed">Completed</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <form id="contact-form" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required minlength="2" maxlength="100" autocomplete="name">
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required maxlength="254" autocomplete="email">
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required minlength="10" maxlength="1000"></textarea>
+                        <span class="error-message" aria-live="polite"></span>
+                    </div>
+                    <!-- Honeypot field for bot protection -->
+                    <div class="form-group" style="display:none;" aria-hidden="true">
+                        <input type="text" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>Matthewcrew1zx@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Quezon City, Metro Manila</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Bootloader1z" class="social-link" aria-label="GitHub" rel="noopener noreferrer" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/matthew-laxamana-710a142a5/" class="social-link" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+                        <a href="https://www.facebook.com/Bootloader1zx/" class="social-link" aria-label="facebook" rel="noopener noreferrer" target="_blank">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Matthew Laxamana. All rights reserved.</p>
+    </footer>
+
+    <!-- Certificate Modal (PDF & Image) -->
+    <div id="pdf-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <h3 id="modal-title" class="modal-title"></h3>
+            <iframe id="pdf-viewer" title="Certificate PDF Viewer" sandbox="allow-scripts allow-same-origin"></iframe>
+            <img id="image-viewer" class="image-viewer" alt="Certificate" style="display:none;">
+        </div>
+    </div>
+
+    <script src="js/certifications.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
