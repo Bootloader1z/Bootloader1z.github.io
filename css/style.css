@@ -813,3 +813,58 @@ body {
 .project-cloud {
     background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
 }
+
+.project-cmis {
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+}
+
+.project-upload {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+}
+
+.project-ebcf {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+.project-liyab {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+}
+
+.project-pet {
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+}
+
+.project-pos {
+    background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+}
+
+/* Section Subtitle */
+.section-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 3rem 0 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Project Links */
+.project-links {
+    margin-top: 0.75rem;
+}
+
+.project-links a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    transition: all var(--transition);
+}
+
+.project-links a:hover {
+    background: var(--primary);
+    color: white;
+}
