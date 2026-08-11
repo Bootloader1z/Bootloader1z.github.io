@@ -338,7 +338,7 @@ body {
 /* Certifications Grid */
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
 }
 
@@ -349,8 +349,6 @@ body {
     border: 1px solid var(--border);
     transition: all var(--transition);
     cursor: pointer;
-    display: flex;
-    flex-direction: row;
 }
 
 .cert-card:hover {
@@ -360,10 +358,9 @@ body {
 }
 
 .cert-thumbnail {
-    width: 160px;
-    min-width: 160px;
-    height: auto;
-    min-height: 140px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
     background: var(--bg-card);
     display: flex;
     align-items: center;
@@ -373,11 +370,21 @@ body {
 }
 
 .cert-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top center;
     transition: transform var(--transition);
+}
+
+.cert-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .cert-card:hover .cert-thumbnail img {
@@ -391,10 +398,6 @@ body {
 
 .cert-info {
     padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
 }
 
 .cert-title {
@@ -738,16 +741,6 @@ body {
 
     .cert-grid {
         grid-template-columns: 1fr;
-    }
-
-    .cert-card {
-        flex-direction: column;
-    }
-
-    .cert-thumbnail {
-        width: 100%;
-        min-width: unset;
-        height: 160px;
     }
 }
 
