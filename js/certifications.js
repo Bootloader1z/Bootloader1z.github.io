@@ -8,6 +8,46 @@ const CertificationsManager = (function() {
     'use strict';
 
     const CERTIFICATIONS = [
+        // April 2026
+        {
+            id: 'cert-new-1',
+            title: 'DICT NSOC Knowledge Transfer',
+            issuer: 'Maroon Studios / Google Cloud Partner',
+            date: 'April 2026',
+            driveFileId: '1Sd4EwIRnBXeGQnt6ZKB_iO-bEfI4wC8a',
+            thumbnailId: null,
+            type: 'image'
+        },
+        // March 2026
+        {
+            id: 'cert-new-4',
+            title: 'DICT Google SecOps Training Workshop',
+            issuer: 'Maroon Studios / Google Cloud Partner',
+            date: 'March 2026',
+            driveFileId: '1qWeaXoxgSaobaZNM6szmHP3wQkuFFX5j',
+            thumbnailId: null,
+            type: 'pdf'
+        },
+        // February 2026
+        {
+            id: 'cert-new-2',
+            title: 'Launching Your IT Career: CompTIA Tech+ and Certification Roadmap Webinar',
+            issuer: 'Trainocate',
+            date: 'February 2026',
+            driveFileId: '1uiblUFkcZqrrNdi4Q8Kawtl9Ul4N3k4t',
+            thumbnailId: null,
+            type: 'pdf'
+        },
+        // November 2025
+        {
+            id: 'cert-new-3',
+            title: 'Design Thinking and Mobile App Wireframing',
+            issuer: 'DICT R5 - Camarines Norte',
+            date: 'November 2025',
+            driveFileId: '1NJqPIcpFXWNDuRk_fVoDXKjNl2JwbhB1',
+            thumbnailId: null,
+            type: 'pdf'
+        },
         // October 2025
         {
             id: 'cert-1',
