@@ -27,7 +27,7 @@ const CertificationsManager = (function() {
             driveFileId: '1qWeaXoxgSaobaZNM6szmHP3wQkuFFX5j',
             thumbnailId: null,
             type: 'pdf',
-            rotation: 0
+            rotation: 90
         },
         // February 2026
         {
@@ -86,7 +86,7 @@ const CertificationsManager = (function() {
             driveFileId: '1iC2INWJybqqfrFx4vzj_Iiuq3uO8wfrn',
             thumbnailId: null,
             type: 'pdf',
-            rotation: 0
+            rotation: -90
         },
         // July 2025
         {
@@ -126,7 +126,7 @@ const CertificationsManager = (function() {
             driveFileId: '1Am9LKTL1dv0sjGtiJLXeDerJKUvZIfJi',
             thumbnailId: null,
             type: 'pdf',
-            rotation: 0
+            rotation: -90
         },
         // December 2024
         {
@@ -376,7 +376,7 @@ const CertificationsManager = (function() {
             ? getThumbnailUrl(cert.thumbnailId) 
             : getThumbnailUrl(cert.driveFileId);
 
-        const rotation = cert.rotation !== undefined ? cert.rotation : -90;
+        const rotation = cert.rotation || 0;
 
         card.innerHTML = `
             <div class="cert-thumbnail" data-src="${sanitize(thumbnailSrc)}" data-rotation="${rotation}">
@@ -408,10 +408,11 @@ const CertificationsManager = (function() {
      */
     function loadThumbnail(thumbnail) {
         const src = thumbnail.dataset.src;
-        const rotation = thumbnail.dataset.rotation || '-90';
+        const rotation = thumbnail.dataset.rotation || '0';
         if (!src || thumbnailCache.has(src)) {
             if (thumbnailCache.has(src)) {
-                thumbnail.innerHTML = `<img src="${thumbnailCache.get(src)}" alt="Certificate thumbnail" loading="lazy" style="transform: rotate(${rotation}deg);">`;
+                const style = rotation !== '0' ? `style="transform: rotate(${rotation}deg); height: 140%; width: auto;"` : '';
+                thumbnail.innerHTML = `<img src="${thumbnailCache.get(src)}" alt="Certificate thumbnail" loading="lazy" ${style}>`;
             }
             return;
         }
@@ -421,11 +422,14 @@ const CertificationsManager = (function() {
             thumbnailCache.set(src, src);
             thumbnail.innerHTML = '';
             img.alt = 'Certificate thumbnail';
-            img.style.transform = `rotate(${rotation}deg)`;
+            if (rotation !== '0') {
+                img.style.transform = `rotate(${rotation}deg)`;
+                img.style.height = '140%';
+                img.style.width = 'auto';
+            }
             thumbnail.appendChild(img);
         };
         img.onerror = function() {
-            // Keep placeholder on error
             console.warn('Failed to load thumbnail');
         };
         img.src = src;
