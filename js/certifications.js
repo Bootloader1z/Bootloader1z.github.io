@@ -26,7 +26,8 @@ const CertificationsManager = (function() {
             date: 'March 2026',
             driveFileId: '1qWeaXoxgSaobaZNM6szmHP3wQkuFFX5j',
             thumbnailId: null,
-            type: 'pdf'
+            type: 'pdf',
+            rotation: 0
         },
         // February 2026
         {
@@ -84,7 +85,8 @@ const CertificationsManager = (function() {
             date: 'September 2025',
             driveFileId: '1iC2INWJybqqfrFx4vzj_Iiuq3uO8wfrn',
             thumbnailId: null,
-            type: 'pdf'
+            type: 'pdf',
+            rotation: 0
         },
         // July 2025
         {
@@ -123,7 +125,8 @@ const CertificationsManager = (function() {
             date: 'February 2025',
             driveFileId: '1Am9LKTL1dv0sjGtiJLXeDerJKUvZIfJi',
             thumbnailId: null,
-            type: 'pdf'
+            type: 'pdf',
+            rotation: 0
         },
         // December 2024
         {
@@ -373,8 +376,10 @@ const CertificationsManager = (function() {
             ? getThumbnailUrl(cert.thumbnailId) 
             : getThumbnailUrl(cert.driveFileId);
 
+        const rotation = cert.rotation !== undefined ? cert.rotation : -90;
+
         card.innerHTML = `
-            <div class="cert-thumbnail" data-src="${sanitize(thumbnailSrc)}">
+            <div class="cert-thumbnail" data-src="${sanitize(thumbnailSrc)}" data-rotation="${rotation}">
                 <span class="cert-placeholder">📜</span>
             </div>
             <div class="cert-info">
@@ -403,9 +408,10 @@ const CertificationsManager = (function() {
      */
     function loadThumbnail(thumbnail) {
         const src = thumbnail.dataset.src;
+        const rotation = thumbnail.dataset.rotation || '-90';
         if (!src || thumbnailCache.has(src)) {
             if (thumbnailCache.has(src)) {
-                thumbnail.innerHTML = `<img src="${thumbnailCache.get(src)}" alt="Certificate thumbnail" loading="lazy">`;
+                thumbnail.innerHTML = `<img src="${thumbnailCache.get(src)}" alt="Certificate thumbnail" loading="lazy" style="transform: rotate(${rotation}deg);">`;
             }
             return;
         }
@@ -415,6 +421,7 @@ const CertificationsManager = (function() {
             thumbnailCache.set(src, src);
             thumbnail.innerHTML = '';
             img.alt = 'Certificate thumbnail';
+            img.style.transform = `rotate(${rotation}deg)`;
             thumbnail.appendChild(img);
         };
         img.onerror = function() {

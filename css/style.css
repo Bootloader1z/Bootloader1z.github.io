@@ -371,13 +371,12 @@ body {
 .cert-thumbnail img {
     height: 140%;
     width: auto;
-    transform: rotate(-90deg);
     object-fit: contain;
     transition: transform var(--transition);
 }
 
 .cert-card:hover .cert-thumbnail img {
-    transform: rotate(-90deg) scale(1.05);
+    filter: brightness(1.05);
 }
 
 .cert-placeholder {
