@@ -207,10 +207,11 @@ body {
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    background: var(--gradient);
+    object-fit: cover;
     margin: 0 auto;
     position: relative;
     box-shadow: 0 0 60px rgba(99, 102, 241, 0.3);
+    border: 4px solid rgba(99, 102, 241, 0.3);
 }
 
 /* Buttons */
