@@ -331,8 +331,8 @@ const CertificationsManager = (function() {
      */
     function getThumbnailUrl(fileId) {
         if (!isValidDriveId(fileId)) return '';
-        // Using thumbnail export - landscape width for better card display
-        return `https://drive.google.com/thumbnail?id=${encodeURIComponent(fileId)}&sz=w800-h400`;
+        // Using thumbnail export for certificate preview
+        return `https://drive.google.com/thumbnail?id=${encodeURIComponent(fileId)}&sz=w600`;
     }
 
     /**
