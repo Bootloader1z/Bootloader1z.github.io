@@ -19,6 +19,14 @@ A secure, optimized portfolio website with Google Drive PDF certification displa
    ```
 4. Edit `js/certifications.js` and replace `YOUR_GOOGLE_DRIVE_FILE_ID_X` with your actual file IDs
 
+## Tech Stack
+
+- **Frontend**: HTML5, CSS3, JavaScript, React, FlutterFlow, Laravel Blade
+- **Backend**: Go, Node.js, Python, Java, PostgreSQL, MongoDB
+- **DevOps & Security**: AWS, Docker, CI/CD, OWASP, Security Auditing
+- **System Administration**: Linux, Windows Server, SysAdmin, DBM
+- **IoT & Hardware**: Arduino, Raspberry Pi, Orange Pi, GSM Modules, Sensors & Actuators
+
 ## File Structure
 
 ```
